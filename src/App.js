@@ -1,20 +1,19 @@
 import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-const MyComponent = () => <p>Hello, I am React component!</p>
+const MyComponent = ({data}) => <p>msg: {data}</p>
 
 
 function App() {
   const [hasError, setErrors] = useState(false);
-  const [data, setData] = useState([{url: ""}]);
+  const [data, setData] = useState("...loading");
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("https://api.thecatapi.com/v1/images/search/");
+      const res = await fetch("https://hd9h1i76ll.execute-api.us-east-1.amazonaws.com/prod/cloudguruServerless");
       res
         .json()
-        .then(res => setData(res))
-        .catch(err => setErrors(err));
+        .then(({msg}) => {console.log(msg); setData(msg)})
+        .catch(err => {console.log({err});setErrors(err)});
     }
     fetchData();
   }, []);
@@ -27,8 +26,7 @@ function App() {
     :(
     <div className="App">
       <header className="App-header">
-        <img src={data[0].url} className="App-logo" alt="" />
-        <MyComponent />
+        <MyComponent data={data}/>
       </header>
     </div>
   )}
