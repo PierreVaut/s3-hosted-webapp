@@ -1,12 +1,17 @@
 # S3 Hosted Webapp
 
-The aim was to test the upload and deployment of a [React App](https://github.com/facebook/create-react-app) using AWS S3 Static Web Hosting.
+The aim was to test the upload and deployment of a [React App](https://github.com/facebook/create-react-app) using AWS S3 Static Web Hosting and AWS lambda back-end.
 
-### Build and Deployment
+### Build and upload
 
 ```yarn deploy```
 
-Endpoint => http://s3-hosted-webapp-pierrevaut2020.s3-website-eu-west-1.amazonaws.com/
+### Deployment
+
+S3 Endpoint => http://s3-hosted-webapp-pierrevaut2020.s3-website-eu-west-1.amazonaws.com/
+
+Route 53 Endpoint => http://randomwebsite.xyz/
+(Tech engineer here, so no time to find a fancy name 😂)
 
 ### Serverless backend
 
@@ -16,4 +21,4 @@ API is only available on stage /prod with 'GET' method
 
 ### Troubleshooting
 
-Check your AWS profile !
+Check your AWS profile before ruuning deploy script!
