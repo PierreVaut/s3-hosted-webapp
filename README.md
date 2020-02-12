@@ -11,13 +11,19 @@ The aim was to test the upload and deployment of a [React App](https://github.co
 S3 Endpoint => http://s3-hosted-webapp-pierrevaut2020.s3-website-eu-west-1.amazonaws.com/
 
 Route 53 Endpoint => http://randomwebsite.xyz/
-(Tech engineer here, so no time to find a fancy name 😂)
+(Tech engineer here, so no time to find a fancy domain name 😂)
 
 ### Serverless backend
 
 API Gateway will trigger the "cloudguruServerless" lambda function through lambda proxy.
 
-API is only available on stage /prod with 'GET' method
+API is only available on stage /prod with 'GET' method.
+
+### Usage plan
+
+Quota: max 500 requests per week.
+
+Throttling: max 1 request per second.
 
 ### Troubleshooting
 
